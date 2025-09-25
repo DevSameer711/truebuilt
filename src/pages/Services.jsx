@@ -2,21 +2,75 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import service1Image from "../assets/services/service1.jpg";
+import service2Image from "../assets/services/service2.jpg";
+import service3Image from "../assets/services/service3.jpg";
+import service4Image from "../assets/services/service4.jpg";
+import service5Image from "../assets/services/service5.jpg";
+import service6Image from "../assets/services/service6.jpg";
+
+
+import kitchen1Image from "../assets/projects/kitchen1.png";
+import kitchen2Image from "../assets/projects/kitchen2.jpg";
+import kitchen3Image from "../assets/projects/kitchen3.jpg";
+import bathroomImage from "../assets/projects/bathroom.jpg";
+import bathroom1Image from "../assets/projects/bathroom1.jpg";
+import bathroom2Image from "../assets/projects/bathroom2.jpg";
+import outdoor1Image from "../assets/projects/outdoor1.jpg";
+import outdoor2Image from "../assets/projects/outdoor2.jpg";
+
+import banner from "../assets/middle.png"
 
 const Services = () => {
   const services = [
-    { title: "Kitchens & Bathrooms", description: "Upgrade your home with new cabinetry, tile, fixtures, lighting, and vanities — plus refreshed tubs or showers that bring comfort and style.", image: "./src/assets/services/service1.jpg" },
-    { title: "Flooring, Painting & Drywall", description: "Upgrade to durable LVP/laminate floors, crisp baseboards, smooth paintwork, and patch and texture for a polished look inside and out.", image: "./src/assets/services/service2.jpg" },
-    { title: "Decks & Outdoor", description: "From new builds and resurfacing to railings, pergolas, and staining — we keep your outdoor spaces strong and stylish.", image: "./src/assets/services/service3.jpg" },
-    { title: "Tenant Improvements", description: "From office buildouts to reconfigurations, ADA updates, and finish upgrades — we tailor spaces for style and efficiency.", image: "./src/assets/services/service4.jpg" },
-    { title: "Restaurant & Retail", description: "Light remodels, custom millwork, BOH improvements, and dining area refreshes to elevate both function and guest experience.", image: "./src/assets/services/service5.jpg" },
-    { title: "Maintenance Contracts", description: "Ongoing repairs, punch list completion, and seasonal upkeep services that keep properties in top condition.", image: "./src/assets/services/service6.jpg" },
+    { 
+      title: "Kitchens & Bathrooms", 
+      description: "Upgrade your home with new cabinetry, tile, fixtures, lighting, and vanities — plus refreshed tubs or showers that bring comfort and style.", 
+      image: service1Image // Use the imported variable
+    },
+    { 
+      title: "Flooring, Painting & Drywall", 
+      description: "Upgrade to durable LVP/laminate floors, crisp baseboards, smooth paintwork, and patch and texture for a polished look inside and out.", 
+      image: service2Image // Use the imported variable
+    },
+    { 
+      title: "Decks & Outdoor", 
+      description: "From new builds and resurfacing to railings, pergolas, and staining — we keep your outdoor spaces strong and stylish.", 
+      image: service3Image // Use the imported variable
+    },
+    { 
+      title: "Tenant Improvements", 
+      description: "From office buildouts to reconfigurations, ADA updates, and finish upgrades — we tailor spaces for style and efficiency.", 
+      image: service4Image // Use the imported variable
+    },
+    { 
+      title: "Restaurant & Retail", 
+      description: "Light remodels, custom millwork, BOH improvements, and dining area refreshes to elevate both function and guest experience.", 
+      image: service5Image // Use the imported variable
+    },
+    { 
+      title: "Maintenance Contracts", 
+      description: "Ongoing repairs, punch list completion, and seasonal upkeep services that keep properties in top condition.", 
+      image: service6Image // Use the imported variable
+    },
   ];
 
   const projects = [
-    { title: "Luxury Kitchen Remodel", description: "A complete kitchen overhaul with modern cabinetry, countertops, and lighting to create a functional yet stylish space.", images: ["./src/assets/projects/kitchen1.png","./src/assets/projects/kitchen2.jpg","./src/assets/projects/kitchen3.jpg"] },
-    {title: "Luxury Bathroom Remodel", description: "A complete bathroom transformation featuring custom tile work, premium finishes, and modern lighting to create a spa-like atmosphere.", images: ["./src/assets/projects/bathroom.jpg","./src/assets/projects/bathroom1.jpg","./src/assets/projects/bathroom2.jpg"] },
-    { title: "Outdoor Deck & Patio", description: "Building a durable and stylish outdoor area including decking, railings, and seating for maximum comfort and longevity.", images: ["./src/assets/projects/outdoor1.jpg","./src/assets/projects/outdoor2.jpg"] },
+    { 
+      title: "Luxury Kitchen Remodel", 
+      description: "A complete kitchen overhaul with modern cabinetry, countertops, and lighting to create a functional yet stylish space.", 
+      images: [kitchen1Image, kitchen2Image, kitchen3Image] // Use imported variables
+    },
+    {
+      title: "Luxury Bathroom Remodel", 
+      description: "A complete bathroom transformation featuring custom tile work, premium finishes, and modern lighting to create a spa-like atmosphere.", 
+      images: [bathroomImage, bathroom1Image, bathroom2Image] // Use imported variables
+    },
+    { 
+      title: "Outdoor Deck & Patio", 
+      description: "Building a durable and stylish outdoor area including decking, railings, and seating for maximum comfort and longevity.", 
+      images: [outdoor1Image, outdoor2Image] // Use imported variables
+    },
   ];
   const projectRefs = useRef([]);
   
@@ -63,7 +117,7 @@ const Services = () => {
       {/* Full-width banner with overlay text */}
 <div className="relative w-full my-36">
   <img
-    src="./src/assets/middle.png"
+    src={banner}
     alt="Banner"
     className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover  shadow-lg"
   />
