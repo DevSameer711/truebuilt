@@ -3,39 +3,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-import service1 from "../assets/services/service1.jpg";
-import service2 from "../assets/services/service2.jpg";
-import service3 from "../assets/services/service3.jpg";
-import service4 from "../assets/services/service4.jpg";
-import service5 from "../assets/services/service5.jpg";
-import service6 from "../assets/services/service6.jpg";
-
-import indoor1 from "../assets/projects/indoor1.jpg";
-import indoor2 from "../assets/projects/indoor2.jpg";
-import indoor3 from "../assets/projects/indoor3.jpg";
-import outdoor1 from "../assets/projects/outdoor1.jpg";
-import outdoor2 from "../assets/projects/outdoor2.jpg";
-
-import banner from "../assets/banner/middle.jpg";
-
-
-
 const Services = () => {
   const services = [
-    { title: "Kitchens & Bathrooms", description: "Upgrade your home with new cabinetry, tile, fixtures, lighting, and vanities — plus refreshed tubs or showers that bring comfort and style.", image: service1 },
-    { title: "Flooring, Painting & Drywall", description: "Upgrade to durable LVP/laminate floors, crisp baseboards, smooth paintwork, and patch and texture for a polished look inside and out.", image: service2 },
-    { title: "Decks & Outdoor", description: "From new builds and resurfacing to railings, pergolas, and staining — we keep your outdoor spaces strong and stylish.", image: service3 },
-    { title: "Tenant Improvements", description: "From office buildouts to reconfigurations, ADA updates, and finish upgrades — we tailor spaces for style and efficiency.", image: service4 },
-    { title: "Restaurant & Retail", description: "Light remodels, custom millwork, BOH improvements, and dining area refreshes to elevate both function and guest experience.", image: service5 },
-    { title: "Maintenance Contracts", description: "Ongoing repairs, punch list completion, and seasonal upkeep services that keep properties in top condition.", image: service6 },
+    { title: "Kitchens & Bathrooms", description: "Upgrade your home with new cabinetry, tile, fixtures, lighting, and vanities — plus refreshed tubs or showers that bring comfort and style.", image: "./src/assets/services/service1.jpg" },
+    { title: "Flooring, Painting & Drywall", description: "Upgrade to durable LVP/laminate floors, crisp baseboards, smooth paintwork, and patch and texture for a polished look inside and out.", image: "./src/assets/services/service2.jpg" },
+    { title: "Decks & Outdoor", description: "From new builds and resurfacing to railings, pergolas, and staining — we keep your outdoor spaces strong and stylish.", image: "./src/assets/services/service3.jpg" },
+    { title: "Tenant Improvements", description: "From office buildouts to reconfigurations, ADA updates, and finish upgrades — we tailor spaces for style and efficiency.", image: "./src/assets/services/service4.jpg" },
+    { title: "Restaurant & Retail", description: "Light remodels, custom millwork, BOH improvements, and dining area refreshes to elevate both function and guest experience.", image: "./src/assets/services/service5.jpg" },
+    { title: "Maintenance Contracts", description: "Ongoing repairs, punch list completion, and seasonal upkeep services that keep properties in top condition.", image: "./src/assets/services/service6.jpg" },
   ];
 
   const projects = [
-    { title: "Luxury Kitchen Remodel", description: "A complete kitchen overhaul with modern cabinetry, countertops, and lighting to create a functional yet stylish space.", images: [indoor1,indoor2,indoor3] },
-    { title: "Outdoor Deck & Patio", description: "Building a durable and stylish outdoor area including decking, railings, and seating for maximum comfort and longevity.", images: [outdoor1,outdoor2] },
+    { title: "Luxury Kitchen Remodel", description: "A complete kitchen overhaul with modern cabinetry, countertops, and lighting to create a functional yet stylish space.", images: ["./src/assets/projects/kitchen1.png","./src/assets/projects/kitchen2.jpg","./src/assets/projects/kitchen3.jpg"] },
+    {title: "Luxury Bathroom Remodel", description: "A complete bathroom transformation featuring custom tile work, premium finishes, and modern lighting to create a spa-like atmosphere.", images: ["./src/assets/projects/bathroom.jpg","./src/assets/projects/bathroom1.jpg","./src/assets/projects/bathroom2.jpg"] },
+    { title: "Outdoor Deck & Patio", description: "Building a durable and stylish outdoor area including decking, railings, and seating for maximum comfort and longevity.", images: ["./src/assets/projects/outdoor1.jpg","./src/assets/projects/outdoor2.jpg"] },
   ];
-
   const projectRefs = useRef([]);
   
   const sliderSettings = { dots: true, infinite: true, speed: 500, slidesToShow: 1, slidesToScroll: 1, swipeToSlide: true, arrows: false };
@@ -78,58 +60,94 @@ const Services = () => {
           {services.map((service) => renderServiceCard(service))}
         </div>
 
-        {/* Full-width banner */}
-      <div className="w-full my-36  ">
-          <img src={banner} alt="Banner" className="w-full h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-xl shadow-lg" />
-        </div>
+      {/* Full-width banner with overlay text */}
+<div className="relative w-full my-36">
+  <img
+    src="./src/assets/middle.png"
+    alt="Banner"
+    className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover  shadow-lg"
+  />
 
-        {/* Projects */}
-        <h2 className="text-4xl sm:text-6xl font-bold text-center text-gray-800 my-12">Our Projects</h2>
-        <div className="flex flex-col gap-16 items-center px-4 sm:px-0">
-          {projects.map((project, idx) => {
-            projectRefs.current[idx] = projectRefs.current[idx] || React.createRef();
-            return (
-              <div key={idx} className="flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl mx-auto">
-                {/* Slider */}
-                <div className="relative w-full md:w-1/2">
-                  <Slider
-                    ref={projectRefs.current[idx]}
-                    {...sliderSettings}
-                    className="!overflow-visible"
-                  >
-                    {project.images.map((img, i) => (
-                      <div key={i} className="flex justify-center px-1">
-                        <div className="w-full h-64 rounded-2xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
-                          <img src={img} alt={`${project.title} ${i + 1}`} className="w-full h-full object-cover" />
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/50 "></div>
 
-                  {/* Side Buttons */}
-                  <button
-                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-transparent text-white text-2xl z-20"
-                    onClick={() => projectRefs.current[idx].current.slickPrev()}
-                  >
-                    &#8592;
-                  </button>
-                  <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-transparent text-white text-2xl z-20"
-                    onClick={() => projectRefs.current[idx].current.slickNext()}
-                  >
-                    &#8594;
-                  </button>
-                </div>
+  {/* Overlay text */}
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <h1 className="text-4xl sm:text-6xl font-extrabold text-white drop-shadow-lg mb-4">
+      Our Projects
+    </h1>
+    <p className="text-base sm:text-lg font-medium text-gray-200 max-w-2xl">
+      Explore our completed projects that showcase quality craftsmanship, modern design, 
+      and attention to every detail.
+    </p>
+  </div>
+</div>
 
-                {/* Description */}
-                <div className="w-full md:w-1/2 flex flex-col justify-center mt-4 md:mt-0">
-                  <h3 className="text-2xl font-semibold mb-2 text-gray-600">{project.title}</h3>
-                  <p className="text-gray-800 text-base">{project.description}</p>
-                </div>
+
+
+
+       {/* Projects */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-4 sm:px-0">
+  {projects.map((project, idx) => {
+    projectRefs.current[idx] = projectRefs.current[idx] || React.createRef();
+
+    // Special case: Outdoor project → span both columns and center
+    const isOutdoor = project.title === "Outdoor Deck & Patio";
+
+    return (
+      <div
+        key={idx}
+        className={`flex flex-col md:flex-row items-center gap-6 w-full max-w-3xl mx-auto 
+          ${isOutdoor ? "lg:col-span-2 justify-center" : ""}`}
+      >
+        {/* Slider */}
+        <div className="relative w-full md:w-1/2">
+          <Slider
+            ref={projectRefs.current[idx]}
+            {...sliderSettings}
+            className="!overflow-visible"
+          >
+            {project.images.map((img, i) => (
+              <div key={i} className="flex justify-center px-1">
+               <div key={i} className="flex justify-center px-1">
+            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center bg-gray-100">
+              <img
+                src={img}
+                alt={`${project.title} ${i + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
               </div>
-            );
-          })}
+            ))}
+          </Slider>
+
+          {/* Side Buttons */}
+          <button
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-transparent text-white text-2xl z-20"
+            onClick={() => projectRefs.current[idx].current.slickPrev()}
+          >
+            &#8592;
+          </button>
+          <button
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-transparent text-white text-2xl z-20"
+            onClick={() => projectRefs.current[idx].current.slickNext()}
+          >
+            &#8594;
+          </button>
         </div>
+
+        {/* Description */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center mt-4 md:mt-0">
+          <h3 className="text-2xl font-semibold mb-2 text-gray-600">{project.title}</h3>
+          <p className="text-gray-800 text-base">{project.description}</p>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
       </div>
     </section>
   );

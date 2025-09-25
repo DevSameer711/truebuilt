@@ -28,7 +28,7 @@ const About = () => {
     <div className="md:w-3/5 w-full flex flex-col justify-center space-y-6 text-center md:text-left px-4 md:px-0">
       
       {/* Section Label */}
-      <p className="text-[#f55018] text-sm sm:text-base font-bold tracking-widest uppercase flex items-center justify-center md:justify-start">
+      <p className="text-[#df642b] text-sm sm:text-base font-bold tracking-widest uppercase flex items-center justify-center md:justify-start">
         <span className="h-2 w-2 bg-[#742a12] rounded-full mr-2"></span>
         About Us
       </p>
@@ -89,7 +89,7 @@ const About = () => {
         {/* Quote Button */}
         <motion.button
          onClick={() => handleNav("/contact")}
-          className="px-6 py-3 sm:px-9 sm:py-4 bg-[#f55018] text-white font-semibold rounded-full shadow-lg relative overflow-hidden group w-full md:w-auto"
+          className="px-6 py-3 sm:px-9 sm:py-4 bg-[#df642b] text-white font-semibold rounded-full shadow-lg relative overflow-hidden group w-full md:w-auto"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >

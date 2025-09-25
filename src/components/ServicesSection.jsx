@@ -27,7 +27,7 @@ const services = [
     title: "Decks & Outdoor",
     image: service3,
     description:
-      "Expand your living space with custom-built decks, patios, and outdoor living solutions.",
+      "Expand your living space with custom-built decks, patios, and outdoor living Solution.",
     alt: "Decks and Outdoor",
   },
   {
@@ -92,7 +92,7 @@ const ServicesSection = () => {
         <div className="flex justify-center mt-8 mx-auto">
   <motion.button
     onClick={() => handleNav("/services")}
-    className="px-6 sm:px-8 py-3 sm:py-4 bg-[#f55018] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
+    className="px-6 sm:px-8 py-3 sm:py-4 bg-[#df642b] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
     whileHover={{ scale: 1.1 }}
     transition={{ type: "spring", stiffness: 300 }}
   >

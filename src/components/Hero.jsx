@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
+import WAVES from "vanta/dist/vanta.waves.min";
 import bgBanner from "../assets/banner-2.png"; 
-import shape3 from "../assets/shape-3.svg"; 
-import shape4 from "../assets/shape-4.svg"; 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -13,52 +13,92 @@ const Hero = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const vantaRef = useRef(null);
+  const vantaEffectRef = useRef(null);
+
+  useEffect(() => {
+    // Make THREE available globally
+    window.THREE = THREE;
+
+    const timeoutId = setTimeout(() => {
+      if (!vantaEffectRef.current && vantaRef.current) {
+        vantaEffectRef.current = WAVES({
+          el: vantaRef.current,
+          THREE: THREE,
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x1a1a1b,
+          shininess: 14.0,
+          waveHeight: 16.5,
+          waveSpeed: 0.4,
+          zoom: 1,
+        });
+      }
+    }, 100);
+
+    // Cleanup
+    return () => {
+      clearTimeout(timeoutId);
+      if (vantaEffectRef.current) {
+        vantaEffectRef.current.destroy();
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative h-screen flex items-center justify-start text-white overflow-hidden">
-      {/* Background Banner */}
+    <section className="relative h-[70vh] sm:h-[80vh] lg:h-screen flex items-center justify-start text-white overflow-hidden">
+
+      {/* Vanta Waves Background (Layer 0) */}
+      <div
+        ref={vantaRef}
+        className="absolute inset-0 w-full h-full z-10 vanta-container opacity-40"
+      ></div>
+
+      {/* Banner Image Overlay (Layer 1) */}
       <div
         className="absolute inset-0 w-full h-full z-0"
         style={{
           backgroundImage: `url(${bgBanner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          opacity: 1,
         }}
       ></div>
-{/* Animated Shapes */}
-<motion.img
-  src={shape3}
-  alt="shape left"
-  className="absolute left-0 top-0 w-full h-full z-0 opacity-70 object-cover"
-  animate={{ x: [0, -20, 0, 0, 0] }}
-  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-/>
+<div
+  className="absolute inset-0 z-20"
+  style={{
+    backgroundImage:
+      "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)",
+  }}
+></div>
+      
 
-
-<motion.img
-  src={shape4}
-  alt="shape right"
-  className="absolute top-0 h-full w-auto z-20 right-[-25%]"
-  animate={{ y: [0, 20, 0] }}
-  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-/>
-      {/* Content */}
-      <div className="relative z-30 p-6 sm:p-12 text-left max-w-full lg:max-w-xl">
+      {/* Content (Layer 3) */}
+      <div className="relative z-30 p-6 sm:p-12 text-left max-w-full lg:max-w-4xl">
         <div className="px-4 sm:px-6 lg:px-8">
-          <p className="text-[#f55018] text-sm sm:text-base font-semibold mb-2 tracking-widest uppercase flex items-center">
-            <span className="h-2 w-2 bg-[#f55018] rounded-full mr-2"></span>
-            TrueBuild Property Solutions
+          {/* Subtitle */}
+          <p className="text-[#df642b] text-sm sm:text-base font-semibold mb-2 tracking-widest uppercase flex items-center">
+            <span className="h-2 w-2 bg-[#df642b] rounded-full mr-2"></span>
+            TrueBuild Property Solution
           </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
             We Provide Effective <br />
-            Construction <span className="text-[#f55018]">&</span> <br />
+            Construction <span className="text-[#df642b]">&</span> <br />
             Renovations Services
           </h1>
 
+          {/* Button */}
           <div className="flex mt-8">
             <motion.button
               onClick={() => handleNav("/contact")}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-[#f55018] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-[#df642b] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >

@@ -22,7 +22,7 @@ export const GetQuote = () => {
       ></div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-orange-700/90 to-red-700/80"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#f55018]/70 to-[#f55018]/90"></div>
 
       {/* Shapes */}
       <img
@@ -51,7 +51,7 @@ export const GetQuote = () => {
         <div className="flex-shrink-0 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
           onClick={() => handleNav("/contact")}
-            className="px-8 py-4 bg-white text-orange-600 font-bold rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orange-600"
+            className="px-8 py-4 bg-white text-[#df642b] font-bold rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orange-600"
           >
             Get A Quote
           </button>

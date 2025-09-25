@@ -1,8 +1,7 @@
-import React from 'react'
-import bgImg from '../assets/bg.jpg' // adjust path if needed
+import React from "react";
+import bgImg from "../assets/bg.jpg"; // adjust path if needed
 
 const Footer = ({ onNavClick }) => {
-  // helper function: scroll to top + navigate
   const handleClick = (section) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     onNavClick(section);
@@ -21,12 +20,50 @@ const Footer = ({ onNavClick }) => {
 
       {/* Content */}
       <div className="relative container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Logo */}
-          <div className="col-span-1">
-            <h3 className="text-3xl font-bold text-white mb-4">TrueBuild</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
+          {/* Logo + Heading */}
+          <div className="col-span-1 flex flex-col space-y-4">
+            <div className="flex items-center space-x-4">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 64 64"
+                fill="none"
+                color="gray"
+                aria-hidden="true"
+                className="shrink-0"
+              >
+                <rect
+                  x="10"
+                  y="10"
+                  width="44"
+                  height="44"
+                  rx="8"
+                  stroke="gray"
+                  strokeWidth="4"
+                  fill="transparent"
+                ></rect>
+                <path
+                  d="M22 42 L42 22"
+                  stroke="gray"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                ></path>
+                <path
+                  d="M22 24 h12 v12"
+                  stroke="gray"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  fill="none"
+                ></path>
+              </svg>
+
+              <h3 className="text-3xl font-bold text-white">TrueBuild</h3>
+            </div>
+
+            {/* Description */}
             <p className="text-sm">
-              TrueBuild Property Solutions is a locally owned and operated
+              TrueBuild Property Solution is a locally owned and operated
               construction company based in Charlotte, NC.
             </p>
           </div>
@@ -38,7 +75,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("home")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Home
                 </button>
@@ -46,7 +83,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Our Services
                 </button>
@@ -54,7 +91,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("contact")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Contact Us
                 </button>
@@ -69,7 +106,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Kitchens & Bathrooms
                 </button>
@@ -77,7 +114,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Flooring, Painting & Drywall
                 </button>
@@ -85,7 +122,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Decks & Outdoor
                 </button>
@@ -93,7 +130,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Tenant Improvements
                 </button>
@@ -101,7 +138,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Restaurant & Retail
                 </button>
@@ -109,7 +146,7 @@ const Footer = ({ onNavClick }) => {
               <li>
                 <button
                   onClick={() => handleClick("services")}
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Maintenance Contracts
                 </button>
@@ -121,7 +158,7 @@ const Footer = ({ onNavClick }) => {
           <div className="col-span-1">
             <h4 className="text-white font-semibold mb-4">Contact Us</h4>
             <p className="text-sm mb-2">(980) 395-2025</p>
-            <p className="text-sm mb-2">info@truebuildpropertysolutions.com</p>
+            <p className="text-sm mb-2">info@truebuildpropertysolution.com</p>
             <p className="text-sm mb-2">Charlotte, NC & Surrounding Areas</p>
           </div>
         </div>

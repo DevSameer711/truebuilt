@@ -6,6 +6,8 @@ import ServicesPage from './pages/Services';
 import ContactPage from './pages/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
 
 const App = () => {
   // Effect to handle scroll animations for all sections
