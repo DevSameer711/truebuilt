@@ -80,7 +80,7 @@ const Services = () => {
 
         {/* Full-width banner */}
       <div className="w-full my-36  ">
-          <img src="./src/assets/banner/middle.jpg" alt="Banner" className="w-full h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-xl shadow-lg" />
+          <img src={banner} alt="Banner" className="w-full h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-xl shadow-lg" />
         </div>
 
         {/* Projects */}
