@@ -2,26 +2,18 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MapPin, Phone, Mail } from "lucide-react";
 import * as EmailJS from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const onSubmit = (data) => {
-    if (!recaptchaValue) {
-      alert("Please verify that you are not a robot.");
-      return;
-    }
-
     const templateParams = {
       fullName: data.fullName,
       email: data.email,
       phone: data.phone,
       message: data.message,
-      "g-recaptcha-response": recaptchaValue
     };
 
     EmailJS.send(
@@ -29,11 +21,11 @@ const Contact = () => {
       "template_3shyx0q",
       templateParams,
       "gCbCAZcFUYsrz3W0Y"
-    ).then(
+    )
+    .then(
       () => {
         setIsModalOpen(true);
         reset();
-        setRecaptchaValue(null);
       },
       (error) => {
         console.error("EmailJS Error:", error);
@@ -98,7 +90,7 @@ const Contact = () => {
 
             <input
               type="tel"
-              placeholder="Phone Number (+1XXXXXXXXXX)"
+              placeholder="(+1) (XXX) (XXX) (XXXX)"
               {...register("phone", {
                 required: "Phone number is required",
                 pattern: {
@@ -117,14 +109,6 @@ const Contact = () => {
               className={`w-full px-4 py-3 bg-gray-100 rounded-lg border ${errors.message ? "border-red-500" : "border-gray-200"}`}
             />
             {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
-
-            {/* reCAPTCHA v2 Checkbox */}
-            {/* <div className="my-4">
-              <ReCAPTCHA
-                sitekey="6LeBQtUrAAAAALVG3_Dd2gwt0Rqglqh9MEgJNuAJ" // Put your reCAPTCHA v2 Site Key here
-                onChange={(value) => setRecaptchaValue(value)}
-              />
-            </div> */}
 
             <button
               type="submit"
