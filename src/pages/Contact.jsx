@@ -119,12 +119,12 @@ const Contact = () => {
             {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
             {/* reCAPTCHA v2 Checkbox */}
-            <div className="my-4">
+            {/* <div className="my-4">
               <ReCAPTCHA
                 sitekey="6LeBQtUrAAAAALVG3_Dd2gwt0Rqglqh9MEgJNuAJ" // Put your reCAPTCHA v2 Site Key here
                 onChange={(value) => setRecaptchaValue(value)}
               />
-            </div>
+            </div> */}
 
             <button
               type="submit"
