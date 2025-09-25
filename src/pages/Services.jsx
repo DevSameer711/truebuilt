@@ -3,19 +3,37 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+import service1 from "../assets/services/service1.jpg";
+import service2 from "../assets/services/service2.jpg";
+import service3 from "../assets/services/service3.jpg";
+import service4 from "../assets/services/service4.jpg";
+import service5 from "../assets/services/service5.jpg";
+import service6 from "../assets/services/service6.jpg";
+
+import indoor1 from "../assets/projects/indoor1.jpg";
+import indoor2 from "../assets/projects/indoor2.jpg";
+import indoor3 from "../assets/projects/indoor3.jpg";
+import outdoor1 from "../assets/projects/outdoor1.jpg";
+import outdoor2 from "../assets/projects/outdoor2.jpg";
+
+import banner from "../assets/banner/middle.jpg";
+
+
+
 const Services = () => {
   const services = [
-    { title: "Kitchens & Bathrooms", description: "Upgrade your home with new cabinetry, tile, fixtures, lighting, and vanities — plus refreshed tubs or showers that bring comfort and style.", image: "./src/assets/services/service1.jpg" },
-    { title: "Flooring, Painting & Drywall", description: "Upgrade to durable LVP/laminate floors, crisp baseboards, smooth paintwork, and patch and texture for a polished look inside and out.", image: "./src/assets/services/service2.jpg" },
-    { title: "Decks & Outdoor", description: "From new builds and resurfacing to railings, pergolas, and staining — we keep your outdoor spaces strong and stylish.", image: "./src/assets/services/service3.jpg" },
-    { title: "Tenant Improvements", description: "From office buildouts to reconfigurations, ADA updates, and finish upgrades — we tailor spaces for style and efficiency.", image: "./src/assets/services/service4.jpg" },
-    { title: "Restaurant & Retail", description: "Light remodels, custom millwork, BOH improvements, and dining area refreshes to elevate both function and guest experience.", image: "./src/assets/services/service5.jpg" },
-    { title: "Maintenance Contracts", description: "Ongoing repairs, punch list completion, and seasonal upkeep services that keep properties in top condition.", image: "./src/assets/services/service6.jpg" },
+    { title: "Kitchens & Bathrooms", description: "Upgrade your home with new cabinetry, tile, fixtures, lighting, and vanities — plus refreshed tubs or showers that bring comfort and style.", image: service1 },
+    { title: "Flooring, Painting & Drywall", description: "Upgrade to durable LVP/laminate floors, crisp baseboards, smooth paintwork, and patch and texture for a polished look inside and out.", image: service2 },
+    { title: "Decks & Outdoor", description: "From new builds and resurfacing to railings, pergolas, and staining — we keep your outdoor spaces strong and stylish.", image: service3 },
+    { title: "Tenant Improvements", description: "From office buildouts to reconfigurations, ADA updates, and finish upgrades — we tailor spaces for style and efficiency.", image: service4 },
+    { title: "Restaurant & Retail", description: "Light remodels, custom millwork, BOH improvements, and dining area refreshes to elevate both function and guest experience.", image: service5 },
+    { title: "Maintenance Contracts", description: "Ongoing repairs, punch list completion, and seasonal upkeep services that keep properties in top condition.", image: service6 },
   ];
 
   const projects = [
-    { title: "Luxury Kitchen Remodel", description: "A complete kitchen overhaul with modern cabinetry, countertops, and lighting to create a functional yet stylish space.", images: ["./src/assets/projects/indoor1.jpg","./src/assets/projects/indoor2.jpg","./src/assets/projects/indoor3.jpg"] },
-    { title: "Outdoor Deck & Patio", description: "Building a durable and stylish outdoor area including decking, railings, and seating for maximum comfort and longevity.", images: ["./src/assets/projects/outdoor1.jpg","./src/assets/projects/outdoor2.jpg"] },
+    { title: "Luxury Kitchen Remodel", description: "A complete kitchen overhaul with modern cabinetry, countertops, and lighting to create a functional yet stylish space.", images: [indoor1,indoor2,indoor3] },
+    { title: "Outdoor Deck & Patio", description: "Building a durable and stylish outdoor area including decking, railings, and seating for maximum comfort and longevity.", images: [outdoor1,outdoor2] },
   ];
 
   const projectRefs = useRef([]);
