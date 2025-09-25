@@ -1,8 +1,16 @@
 import React from 'react'
 import aboutImage from "../assets/about.png";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+
+  const navigate = useNavigate();
+
+  const handleNav = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className="bg-gray-100 font-sans p-6 md:p-16">
   <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
@@ -80,7 +88,7 @@ const About = () => {
         
         {/* Quote Button */}
         <motion.button
-          onClick={() => onNavClick("contact")}
+         onClick={() => handleNav("/contact")}
           className="px-6 py-3 sm:px-9 sm:py-4 bg-[#f55018] text-white font-semibold rounded-full shadow-lg relative overflow-hidden group w-full md:w-auto"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}

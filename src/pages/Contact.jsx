@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
     return (
-      <section className="py-20 px-6 animate-on-scroll bg-gray-100">
+      <section className="py-20 px-6 bg-gray-100">
         <div className="container mx-auto lg:flex lg:justify-between lg:items-center gap-12">
           {/* Left side with contact info and map placeholder */}
           <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
