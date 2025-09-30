@@ -82,15 +82,15 @@ const Hero = () => {
       <div className="relative z-30 p-6 sm:p-12 text-left max-w-full lg:max-w-4xl">
         <div className="px-4 sm:px-6 lg:px-8">
           {/* Subtitle */}
-          <p className="text-[#df642b] text-sm sm:text-base font-semibold mb-2 tracking-widest uppercase flex items-center">
-            <span className="h-2 w-2 bg-[#df642b] rounded-full mr-2"></span>
-            TrueBuild Property Solution
+          <p className="text-[#40641e] text-sm sm:text-base font-semibold mb-2 tracking-widest uppercase flex items-center">
+            <span className="h-2 w-2 bg-[#40641e] rounded-full mr-2"></span>
+            TrueBuild Property Solutions
           </p>
 
           {/* Title */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
             We Provide Effective <br />
-            Construction <span className="text-[#df642b]">&</span> <br />
+            Construction <span className="text-[#40641e]">&</span> <br />
             Renovations Services
           </h1>
 
@@ -98,7 +98,7 @@ const Hero = () => {
           <div className="flex mt-8">
             <motion.button
               onClick={() => handleNav("/contact")}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-[#df642b] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-[#40641e] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >

@@ -1,12 +1,8 @@
 import React from "react";
-import bgImg from "../assets/bg.jpg"; // adjust path if needed
+import { Link } from "react-router-dom"; 
+import bgImg from "../assets/bg.jpg";
 
-const Footer = ({ onNavClick }) => {
-  const handleClick = (section) => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    onNavClick(section);
-  };
-
+const Footer = () => {
   return (
     <footer className="relative bg-gray-900 text-gray-400 pb-10 pt-24 overflow-hidden">
       {/* Background Image */}
@@ -61,7 +57,6 @@ const Footer = ({ onNavClick }) => {
               <h3 className="text-3xl font-bold text-white">TrueBuild</h3>
             </div>
 
-            {/* Description */}
             <p className="text-sm">
               TrueBuild Property Solution is a locally owned and operated
               construction company based in Charlotte, NC.
@@ -73,28 +68,28 @@ const Footer = ({ onNavClick }) => {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button
-                  onClick={() => handleClick("home")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
+                <Link
+                  to="/"
+                  className="hover:text-[#40641e] transition-colors duration-300"
                 >
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
+                <Link
+                  to="/services"
+                  className="hover:text-[#40641e] transition-colors duration-300"
                 >
                   Our Services
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("contact")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
+                <Link
+                  to="/contact"
+                  className="hover:text-[#40641e] transition-colors duration-300"
                 >
                   Contact Us
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -104,52 +99,34 @@ const Footer = ({ onNavClick }) => {
             <h4 className="text-white font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
-                >
+                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
                   Kitchens & Bathrooms
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
-                >
+                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
                   Flooring, Painting & Drywall
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
-                >
+                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
                   Decks & Outdoor
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
-                >
+                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
                   Tenant Improvements
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
-                >
+                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
                   Restaurant & Retail
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleClick("services")}
-                  className="hover:text-[#df642b] transition-colors duration-300"
-                >
+                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
                   Maintenance Contracts
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

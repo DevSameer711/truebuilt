@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.jpeg"
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Header = () => {
   return (
     <>
       {/* Top Info Bar */}
-      <div className="bg-[#df642b] text-white p-2 hidden sm:block">
+      <div className="bg-[#40641e] text-white p-2 hidden sm:block">
         <div className="container mx-auto flex justify-between items-center px-6">
           <div className="flex items-center space-x-2 flex-1 text-sm">
             <FaMapMarkerAlt />
@@ -37,57 +38,25 @@ const Header = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-[#16191c] text-white p-4 sticky top-0 z-50">
+      <nav className="bg-[#fff] text-black p-4 sticky top-0 z-50">
   <div className="container mx-auto flex justify-between items-center">
     {/* Logo */}
     <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleNav("/")}>
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 64 64"
-        fill="none"
-        stroke="#df642b"
-        aria-hidden="true"
-      >
-        <rect
-          x="10"
-          y="10"
-          width="44"
-          height="44"
-          rx="8"
-          strokeWidth="4"
-          fill="transparent"
-        ></rect>
-        <path
-          d="M22 42 L42 22"
-          strokeWidth="4"
-          strokeLinecap="round"
-        ></path>
-        <path
-          d="M22 24 h12 v12"
-          strokeWidth="4"
-          strokeLinecap="round"
-          fill="none"
-        ></path>
-      </svg>
-      <div className="flex flex-col">
-        <span className="text-2xl font-bold">TrueBuild</span>
-        <span className="text-sm text-gray-300">Property Solution</span>
-      </div>
+      <img src={Logo} alt="" className="h-16 w-auto"/>
     </div>
 
     {/* Nav Links */}
     <div className="hidden lg:flex items-center space-x-6">
-      <button onClick={() => handleNav("/")} className="p-2 hover:text-[#df642b]">Home</button>
-      <button onClick={() => handleNav("/services")} className="p-2 hover:text-[#df642b]">Services</button>
-      <button onClick={() => handleNav("/contact")} className="p-2 hover:text-[#df642b]">Contact</button>
+      <button onClick={() => handleNav("/")} className="p-2 hover:text-[#40641e]">Home</button>
+      <button onClick={() => handleNav("/services")} className="p-2 hover:text-[#40641e]">Services</button>
+      <button onClick={() => handleNav("/contact")} className="p-2 hover:text-[#40641e]">Contact</button>
     </div>
 
     {/* Get a Quote Button */}
     <div className="hidden lg:flex items-center">
       <motion.button
         onClick={() => handleNav("/contact")}
-        className="px-5 py-2 bg-white text-[#df642b] font-semibold rounded-full shadow-lg group"
+        className="px-5 py-2 bg-[#40641e] text-[#fff] font-semibold rounded-full shadow-lg group"
         whileHover={{ scale: 1.05 }}
       >
         <span className="block group-hover:-translate-y-1 transition-transform duration-300">
@@ -121,12 +90,12 @@ const Header = () => {
         </div>
 
         <div className="flex flex-col space-y-4">
-          <button onClick={() => handleNav("/")} className="p-2 hover:text-[#df642b] text-left">Home</button>
-          <button onClick={() => handleNav("/services")} className="p-2 hover:text-[#df642b] text-left">Services</button>
-          <button onClick={() => handleNav("/contact")} className="p-2 hover:text-[#df642b] text-left">Contact</button>
+          <button onClick={() => handleNav("/")} className="p-2 hover:text-[#314d17] text-left">Home</button>
+          <button onClick={() => handleNav("/services")} className="p-2 hover:text-[#314d17] text-left">Services</button>
+          <button onClick={() => handleNav("/contact")} className="p-2 hover:text-[#314d17] text-left">Contact</button>
           <motion.button
             onClick={() => handleNav("/contact")}
-            className="px-6 py-2 bg-white text-[#df642b] font-semibold rounded-full shadow-lg"
+            className="px-6 py-2 bg-white text-[#314d17] font-semibold rounded-full shadow-lg"
             whileHover={{ scale: 1.05 }}
           >
             Get a Quote

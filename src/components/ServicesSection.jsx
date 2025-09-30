@@ -92,7 +92,7 @@ const ServicesSection = () => {
         <div className="flex justify-center mt-8 mx-auto">
   <motion.button
     onClick={() => handleNav("/services")}
-    className="px-6 sm:px-8 py-3 sm:py-4 bg-[#df642b] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
+    className="px-6 sm:px-8 py-3 sm:py-4 bg-[#40641e] text-[#ffffff] font-semibold rounded-full shadow-lg relative overflow-hidden group"
     whileHover={{ scale: 1.1 }}
     transition={{ type: "spring", stiffness: 300 }}
   >

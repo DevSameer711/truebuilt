@@ -6,7 +6,7 @@ import ServicesPage from './pages/Services';
 import ContactPage from './pages/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import ScrollToTop from './components/Scrolltotop';
 
 const App = () => {
   // Effect to handle scroll animations for all sections
@@ -73,7 +73,7 @@ const App = () => {
           }
         `}
       </style>
-
+      <ScrollToTop />
       <Header />
 
       <main className="min-h-screen">

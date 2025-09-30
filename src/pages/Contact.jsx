@@ -17,10 +17,10 @@ const Contact = () => {
     };
 
     EmailJS.send(
-      "service_xgbbn1q",
-      "template_3shyx0q",
+      "", //service
+      "", //template
       templateParams,
-      "gCbCAZcFUYsrz3W0Y"
+      "" //public key
     )
     .then(
       () => {
@@ -112,7 +112,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-[#df642b] text-white font-semibold rounded-lg shadow-lg hover:bg-[#c05621]"
+              className="w-full px-8 py-4 bg-[#40641e] text-white font-semibold rounded-lg shadow-lg hover:bg-[#c05621]"
             >
               Send Message
             </button>
@@ -126,7 +126,7 @@ const Contact = () => {
           <div className="bg-white rounded-lg p-6 w-96 shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-green-600">Success!</h2>
             <p className="mb-6">Your message has been sent successfully. We will get back to you soon.</p>
-            <button onClick={() => setIsModalOpen(false)} className="px-6 py-2 bg-[#df642b] text-white rounded-lg hover:bg-[#c05621]">
+            <button onClick={() => setIsModalOpen(false)} className="px-6 py-2 bg-[#40641e] text-white rounded-lg hover:bg-[#c05621]">
               Close
             </button>
           </div>
