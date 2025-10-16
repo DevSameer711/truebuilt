@@ -23,7 +23,7 @@ The site focuses on showcasing services and before-&-after project transformatio
 | Layer | Technologies |
 |-------|-----------------------------|
 | Frontend | React |
-| Styling | Tailwind CSS | ShadCn Ui
+| Styling | Tailwind CSS & ShadCn Ui |
 | Hosting / Deployment | Netlify |
 
 
