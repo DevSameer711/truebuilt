@@ -70,7 +70,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="hover:text-[#40641e] transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Home
                 </Link>
@@ -78,7 +78,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services"
-                  className="hover:text-[#40641e] transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Our Services
                 </Link>
@@ -86,7 +86,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="hover:text-[#40641e] transition-colors duration-300"
+                  className="hover:text-[#df642b] transition-colors duration-300"
                 >
                   Contact Us
                 </Link>
@@ -99,32 +99,32 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
+                <Link to="/services" className="hover:text-[#df642b] transition-colors duration-300">
                   Kitchens & Bathrooms
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
+                <Link to="/services" className="hover:text-[#df642b] transition-colors duration-300">
                   Flooring, Painting & Drywall
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
+                <Link to="/services" className="hover:text-[#df642b] transition-colors duration-300">
                   Decks & Outdoor
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
+                <Link to="/services" className="hover:text-[#df642b] transition-colors duration-300">
                   Tenant Improvements
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
+                <Link to="/services" className="hover:text-[#df642b] transition-colors duration-300">
                   Restaurant & Retail
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#40641e] transition-colors duration-300">
+                <Link to="/services" className="hover:text-[#df642b] transition-colors duration-300">
                   Maintenance Contracts
                 </Link>
               </li>

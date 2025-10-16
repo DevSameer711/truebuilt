@@ -28,8 +28,8 @@ const About = () => {
     <div className="md:w-3/5 w-full flex flex-col justify-center space-y-6 text-center md:text-left px-4 md:px-0">
       
       {/* Section Label */}
-      <p className="text-[#40641e] text-sm sm:text-base font-bold tracking-widest uppercase flex items-center justify-center md:justify-start">
-        <span className="h-2 w-2 bg-[#40641e] rounded-full mr-2"></span>
+      <p className="text-[#df642b] text-sm sm:text-base font-bold tracking-widest uppercase flex items-center justify-center md:justify-start">
+        <span className="h-2 w-2 bg-[#df642b] rounded-full mr-2"></span>
         About Us
       </p>
 
@@ -63,8 +63,8 @@ const About = () => {
               >
                 <defs>
                   <linearGradient id={`orangeGradient${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#314d17" />
-                    <stop offset="100%" stopColor="#79bd39" />
+                    <stop offset="0%" stopColor="#742a12" />
+                    <stop offset="100%" stopColor="#b66b51" />
                   </linearGradient>
                 </defs>
                 <circle
@@ -89,7 +89,7 @@ const About = () => {
         {/* Quote Button */}
         <motion.button
          onClick={() => handleNav("/contact")}
-          className="px-6 py-3 sm:px-9 sm:py-4 bg-[#40641e] text-white font-semibold rounded-full shadow-lg relative overflow-hidden group w-full md:w-auto"
+          className="px-6 py-3 sm:px-9 sm:py-4 bg-[#df642b] text-white font-semibold rounded-full shadow-lg relative overflow-hidden group w-full md:w-auto"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >

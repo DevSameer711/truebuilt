@@ -37,7 +37,7 @@ const ScrollVelocity = ({
             key={i}
             className="flex-shrink-0 px-4 text-4xl sm:text-4xl md:text-6xl lg:text-8xl"
             style={{
-              WebkitTextStroke: "2px #40641e",
+              WebkitTextStroke: "2px #df642b",
               color: "transparent",
               fontFamily: "'Poppins', sans-serif",
             }}
